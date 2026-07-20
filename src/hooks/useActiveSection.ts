@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 // visible using IntersectionObserver.
 // =====================================
 
-const SECTION_IDS = ['home', 'about', 'timeline', 'skills', 'projects', 'contact']
+const SECTION_IDS = ['home', 'about', 'timeline', 'certificates', 'skills', 'projects', 'contact']
 
 export function useActiveSection(): string {
   const [active, setActive] = useState('home')
