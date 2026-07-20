@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* =====================================
+  GLOBAL STYLES
+  =====================================
+  Edit colors below if you want to
+  customize the theme.
+  ===================================== */
+
+@theme {
+  --color-primary: #4F252E;
+  --color-secondary: #4B5694;
+  --color-accent: #7288AE;
+  --color-background: #EAE0CF;
+  --font-family-sans: "Poppins", sans-serif;
+}
+
+/* ---------- BASE STYLES ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #0F172A, #111827, #1E293B, #0B1322, #111827);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradientShift 20s ease infinite;
+  color: #EAE0CF;
+}
+
+/* ----- GRADIENT ANIMATION ----- */
+/* Slowly moves the gradient across 4 positions
+   creating a subtle, premium background shift */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  25%      { background-position: 100% 50%; }
+  50%      { background-position: 50% 100%; }
+  75%      { background-position: 100% 0%; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7288AE;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4B5694;
+}
+
+/* ---------- REDUCED MOTION (accessibility) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- GLOW EFFECT UTILITY ---------- */
+@utility glow-accent {
+  box-shadow: 0 0 20px rgba(114, 136, 174, 0.15);
+}
+
+/* ---------- SELECTION ---------- */
+::selection {
+  background-color: #4B5694;
+  color: #fff;
+}
+
+/* ---------- RIPPLE ANIMATION ---------- */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@utility animate-ripple {
+  animation: ripple 0.6s ease-out;
+}
+
+/* ---------- UTILITY: glassmorphism ---------- */
+@utility glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/10;
+}
+
+/* ---------- FOCUS VISIBLE (accessibility) ---------- */
+*:focus-visible {
+  outline: 2px solid #4B5694;
+  outline-offset: 2px;
+}

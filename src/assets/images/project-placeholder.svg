@@ -1,0 +1,9 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#EAE0CF"/>
+  <rect x="50" y="80" width="300" height="8" rx="4" fill="#4F252E" opacity="0.3"/>
+  <rect x="100" y="100" width="200" height="8" rx="4" fill="#7288AE" opacity="0.5"/>
+  <rect x="50" y="150" width="80" height="30" rx="6" fill="#4B5694"/>
+  <rect x="145" y="150" width="80" height="30" rx="6" fill="#7288AE"/>
+  <text x="200" y="55" text-anchor="middle" font-family="Poppins, sans-serif" font-size="16" fill="#4F252E" font-weight="600">Project Image</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Poppins, sans-serif" font-size="12" fill="#4F252E" opacity="0.5">Replace with your screenshot</text>
+</svg>
