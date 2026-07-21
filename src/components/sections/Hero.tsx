@@ -100,7 +100,10 @@ export default function Hero() {
         variants={variants}
         className="relative z-10 mx-auto max-w-4xl px-6 text-center"
       >
-        <motion.p variants={childVariants} className="text-lg font-medium text-accent">
+        <motion.p
+          variants={childVariants}
+          className="text-lg font-medium text-accent"
+        >
           Hello, I&apos;m
         </motion.p>
 
@@ -120,6 +123,7 @@ export default function Hero() {
               "Front-End Developer of Taguro Mobile App",
               "UI/UX Designer",
               "Web Designer",
+              "Hi, Abegail Cantago my bebelove",
             ]}
             speed={80}
             deleteSpeed={50}
