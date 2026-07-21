@@ -53,6 +53,7 @@ export default function About() {
               <img
                 src={profile}
                 alt="Profile photo of Marc Latiban — Front-End Developer"
+                loading="lazy"
                 className="relative z-10 h-72 w-72 rounded-2xl object-cover shadow-xl md:h-80 md:w-80 border-4 border-white/10"
               />
               <div className="absolute -bottom-2 -right-2 w-6 h-6 rounded-full bg-[#7288AE]/30 blur-sm z-20" />
@@ -126,7 +127,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-              className="flex flex-col items-center gap-2 rounded-2xl bg-white/[0.04] border border-white/[0.06] backdrop-blur-xl p-6 hover:bg-white/[0.08] hover:border-[#4B5694]/30 hover:shadow-[0_0_20px_rgba(75,86,148,0.1)] transition-all duration-300"
+              className="flex flex-col items-center gap-2 rounded-2xl bg-white/[0.04] border border-white/[0.06] backdrop-blur-xl p-6 hover:bg-white/[0.08] hover:border-[#4B5694]/30 hover:shadow-[0_0_20px_rgba(75,86,148,0.1)] transition-colors transition-shadow duration-300"
             >
               <span className="text-[#7288AE]">{stat.icon}</span>
               <span className="text-2xl font-bold text-[#EAE0CF]">{stat.value}</span>
@@ -146,7 +147,7 @@ export default function About() {
           {funFacts.map((fact) => (
             <span
               key={fact.label}
-              className="inline-flex items-center gap-2 rounded-full bg-white/[0.04] border border-white/[0.06] px-4 py-2 text-sm text-[#EAE0CF]/60 hover:border-[#7288AE]/30 hover:text-[#EAE0CF] transition-all duration-300"
+              className="inline-flex items-center gap-2 rounded-full bg-white/[0.04] border border-white/[0.06] px-4 py-2 text-sm text-[#EAE0CF]/60 hover:border-[#7288AE]/30 hover:text-[#EAE0CF] transition-colors duration-300"
             >
               <span className="text-[#7288AE]">{fact.icon}</span>
               {fact.label}

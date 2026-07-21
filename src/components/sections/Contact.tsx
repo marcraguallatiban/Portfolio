@@ -57,7 +57,7 @@ function FloatingField({
   const [focused, setFocused] = useState(false);
   const active = focused || value.length > 0;
 
-  const shared = `peer w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 pt-6 pb-3 text-[#EAE0CF] placeholder:text-transparent focus:outline-none focus:ring-2 focus:ring-[#4B5694] focus:border-transparent focus:shadow-[0_0_16px_rgba(75,86,148,0.15)] transition-all duration-300`;
+  const shared = `peer w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 pt-6 pb-3 text-[#EAE0CF] placeholder:text-transparent focus:outline-none focus:ring-2 focus:ring-[#4B5694] focus:border-transparent focus:shadow-[0_0_16px_rgba(75,86,148,0.15)] transition-colors duration-300`;
 
   if (rows) {
     return (
@@ -152,39 +152,17 @@ export default function Contact() {
       id="contact"
       className="bg-transparent py-20 md:py-28 relative overflow-hidden"
     >
-      {/* Floating decorative shapes */}
+      {/* Decorative shapes */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <motion.div
-          animate={{
-            y: [0, -24, 0],
-            opacity: [0.3, 0.5, 0.3],
-            rotate: [0, 15, 0],
-          }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-16 left-8 w-5 h-5 rounded-full bg-[#4B5694]/20"
-        />
-        <motion.div
-          animate={{
-            y: [0, 18, 0],
-            opacity: [0.2, 0.4, 0.2],
-            rotate: [0, -20, 0],
-          }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-36 right-12 w-7 h-7 rounded-lg bg-[#7288AE]/10 rotate-45"
-        />
-        <motion.div
-          animate={{ y: [0, -14, 0], opacity: [0.15, 0.3, 0.15] }}
+          animate={{ opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/3 right-10 w-3 h-3 rounded-full bg-[#4F252E]/20"
+          className="absolute top-16 left-8 w-5 h-5 rounded-full bg-secondary/20"
         />
         <motion.div
-          animate={{
-            y: [0, 20, 0],
-            opacity: [0.2, 0.35, 0.2],
-            rotate: [0, 30, 0],
-          }}
+          animate={{ opacity: [0.15, 0.3, 0.15] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 left-12 w-4 h-4 rounded-full border border-[#4B5694]/20"
+          className="absolute bottom-36 right-12 w-7 h-7 rounded-lg bg-accent/10 rotate-45"
         />
       </div>
 
@@ -252,7 +230,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={sending}
-                    className="relative inline-flex items-center gap-2 overflow-hidden rounded-full font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694] focus-visible:ring-offset-2 px-8 py-3 text-lg bg-gradient-to-r from-[#4B5694] to-[#7288AE] text-white shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="relative inline-flex items-center gap-2 overflow-hidden rounded-full font-medium transition-colors duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694] focus-visible:ring-offset-2 px-8 py-3 text-lg bg-gradient-to-r from-[#4B5694] to-[#7288AE] text-white shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     aria-label="Send message"
                   >
                     <FaPaperPlane />
@@ -319,7 +297,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.name}
-                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-[#7288AE] shadow-sm hover:bg-[#4B5694] hover:text-white hover:shadow-lg hover:scale-110 transition-all duration-300"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-[#7288AE] shadow-sm hover:bg-[#4B5694] hover:text-white hover:shadow-lg hover:scale-110 transition-colors duration-300"
                   >
                     {iconMap[link.icon]}
                   </a>

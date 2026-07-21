@@ -1,14 +1,17 @@
-import { FaGithub, FaExternalLinkAlt, FaStar } from 'react-icons/fa'
-import { motion } from 'framer-motion'
-import SectionTitle from '../ui/SectionTitle'
-import Card from '../ui/Card'
-import Button from '../ui/Button'
-import { projects } from '../../data/projects'
+import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
+import SectionTitle from "../ui/SectionTitle";
+import Card from "../ui/Card";
+import Button from "../ui/Button";
+import { projects } from "../../data/projects";
 
 export default function Projects() {
   return (
     <section id="projects" className="bg-transparent py-20 md:py-28 relative">
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#7288AE]/5 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute top-1/2 left-0 w-80 h-80 bg-[#7288AE]/5 rounded-full blur-[120px] pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div className="mx-auto max-w-6xl px-6 relative z-10">
         <SectionTitle title="Projects" subtitle="Some things I've built" />
@@ -17,7 +20,10 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.1 } },
+          }}
           className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project, idx) => (
@@ -29,7 +35,7 @@ export default function Projects() {
               }}
               className="group"
             >
-              <Card className="overflow-hidden h-full flex flex-col hover:shadow-[0_0_25px_rgba(114,136,174,0.2)] hover:border-[#7288AE]/30 transition-all duration-500 relative">
+              <Card className="overflow-hidden h-full flex flex-col hover:shadow-[0_0_25px_rgba(114,136,174,0.2)] hover:border-[#7288AE]/30 transition-colors transition-shadow duration-500 relative">
                 {/* Featured badge */}
                 {idx === 0 && (
                   <div className="absolute top-3 right-3 z-20 flex items-center gap-1 rounded-full bg-[#4B5694]/80 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white">
@@ -48,7 +54,7 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Hover reveal buttons */}
-                  <div className="absolute bottom-3 left-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <div className="absolute bottom-3 left-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-[opacity,transform] duration-300">
                     <Button
                       href={project.githubUrl}
                       variant="outline"
@@ -98,5 +104,5 @@ export default function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

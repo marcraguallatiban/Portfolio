@@ -32,6 +32,7 @@ export const skillCategories = [
       { name: 'MongoDB', icon: 'SiMongodb', proficiency: 65 },
       { name: 'MySQL', icon: 'SiMysql', proficiency: 60 },
       { name: 'PostgreSQL', icon: 'SiPostgresql', proficiency: 50 },
+      
     ],
   },
   {

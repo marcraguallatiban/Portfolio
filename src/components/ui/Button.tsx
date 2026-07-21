@@ -1,4 +1,4 @@
-import { type ReactNode, useRef, useState, useCallback } from 'react'
+import { type ReactNode, useRef, useState, useEffect } from 'react'
 
 interface ButtonProps {
   children: ReactNode
@@ -23,12 +23,16 @@ export default function Button({
   ariaLabel,
   className = '',
 }: ButtonProps) {
+  const [canHover, setCanHover] = useState(false)
   const [ripples, setRipples] = useState<{ x: number; y: number; id: number }[]>([])
-  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 })
-  const ref = useRef<HTMLButtonElement | HTMLAnchorElement>(null)
   const idRef = useRef(0)
 
+  useEffect(() => {
+    setCanHover(window.matchMedia('(hover: hover)').matches)
+  }, [])
+
   const handleRipple = (e: React.MouseEvent) => {
+    if (!canHover) return
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
     const x = e.clientX - rect.left
     const y = e.clientY - rect.top
@@ -39,19 +43,8 @@ export default function Button({
     }, 600)
   }
 
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
-    const offsetX = (e.clientX - rect.left - rect.width / 2) * 0.15
-    const offsetY = (e.clientY - rect.top - rect.height / 2) * 0.15
-    setMouseOffset({ x: offsetX, y: offsetY })
-  }, [])
-
-  const handleMouseLeave = useCallback(() => {
-    setMouseOffset({ x: 0, y: 0 })
-  }, [])
-
   const base =
-    'relative inline-flex items-center gap-2 overflow-hidden rounded-full font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694] focus-visible:ring-offset-2'
+    'relative inline-flex items-center gap-2 overflow-hidden rounded-full font-medium transition-colors duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694] focus-visible:ring-offset-2'
 
   const variants: Record<string, string> = {
     primary: 'bg-[#4B5694] text-white hover:bg-[#7288AE] shadow-md hover:shadow-lg',
@@ -66,11 +59,6 @@ export default function Button({
     lg: 'px-8 py-3 text-lg',
   }
 
-  const transformStyle: React.CSSProperties = {
-    transform: `translate(${mouseOffset.x}px, ${mouseOffset.y}px)`,
-    willChange: 'transform',
-  }
-
   const rippleElements = ripples.map((r) => (
     <span
       key={r.id}
@@ -82,9 +70,6 @@ export default function Button({
   const commonProps = {
     className: `${base} ${variants[variant]} ${sizes[size]} ${className}`,
     'aria-label': ariaLabel,
-    onMouseMove: handleMouseMove,
-    onMouseLeave: handleMouseLeave,
-    style: transformStyle,
     onClick: (e: React.MouseEvent) => {
       handleRipple(e)
       onClick?.()
@@ -92,12 +77,14 @@ export default function Button({
   }
 
   if (href) {
+    const isExternal = href.startsWith('http')
+    const isFile = /\.\w+$/.test(href) && !isExternal
     return (
       <a
-        ref={ref as React.Ref<HTMLAnchorElement>}
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+        download={isFile ? href : undefined}
         {...commonProps}
       >
         {icon && <span className="text-lg">{icon}</span>}
@@ -108,11 +95,7 @@ export default function Button({
   }
 
   return (
-    <button
-      ref={ref as React.Ref<HTMLButtonElement>}
-      type={type}
-      {...commonProps}
-    >
+    <button type={type} {...commonProps}>
       {icon && <span className="text-lg">{icon}</span>}
       {children}
       {rippleElements}

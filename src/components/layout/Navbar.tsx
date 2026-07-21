@@ -34,7 +34,7 @@ export default function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`relative flex items-center justify-between rounded-2xl px-5 py-2.5 transition-all duration-300 w-full max-w-5xl mx-auto ${
+        className={`relative flex items-center justify-between rounded-2xl px-5 py-2.5 transition-colors duration-300 w-full max-w-5xl mx-auto ${
           scrolled
             ? 'bg-[#0F172A]/80 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.3)] border border-white/10'
             : 'bg-[#0F172A]/40 backdrop-blur-lg border border-white/[0.06]'

@@ -49,7 +49,7 @@ export default function Timeline() {
 
                 {/* Card */}
                 <div className={`w-full md:w-[calc(50%-2rem)] pl-10 md:pl-0 ${idx % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
-                  <div className="rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.06] p-5 hover:bg-white/[0.06] hover:border-[#7288AE]/20 transition-all duration-300">
+                  <div className="rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.06] p-5 hover:bg-white/[0.06] hover:border-[#7288AE]/20 transition-colors transition-shadow duration-300">
                     {/* Year badge */}
                     <span className="inline-block rounded-full bg-[#4B5694]/20 px-3 py-0.5 text-xs font-semibold text-[#7288AE] mb-2">
                       {event.year}

@@ -61,7 +61,7 @@ export default function Certificates() {
                 visible: { opacity: 1, y: 0 },
               }}
               onClick={() => setSelectedCert(cert)}
-              className="group cursor-pointer rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.06] overflow-hidden hover:bg-white/[0.06] hover:border-[#7288AE]/30 hover:shadow-[0_8px_30px_rgba(114,136,174,0.15)] hover:-translate-y-1.5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694]"
+              className="group cursor-pointer rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.06] overflow-hidden hover:bg-white/[0.06] hover:border-[#7288AE]/30 hover:shadow-[0_8px_30px_rgba(114,136,174,0.15)] hover:-translate-y-1.5 transition-colors transition-shadow duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694]"
               tabIndex={0}
               role="button"
               aria-label={`View ${cert.title} certificate`}
@@ -150,7 +150,7 @@ export default function Certificates() {
               {/* Close button */}
               <button
                 onClick={() => setSelectedCert(null)}
-                className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-black/70 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694]"
+                className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-black/70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694]"
                 aria-label="Close modal"
               >
                 <FaTimes size={14} />
@@ -208,7 +208,7 @@ export default function Certificates() {
                     href={selectedCert.credentialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#4B5694] text-white text-sm font-medium hover:bg-[#7288AE] transition-all duration-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694]"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#4B5694] text-white text-sm font-medium hover:bg-[#7288AE] transition-colors duration-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B5694]"
                   >
                     View Credential
                     <FaExternalLinkAlt size={12} />

@@ -22,21 +22,9 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(-45deg, #0F172A, #111827, #1E293B, #0B1322, #111827);
-  background-size: 400% 400%;
+  background-color: #0F172A;
   background-attachment: fixed;
-  animation: gradientShift 20s ease infinite;
   color: #EAE0CF;
-}
-
-/* ----- GRADIENT ANIMATION ----- */
-/* Slowly moves the gradient across 4 positions
-   creating a subtle, premium background shift */
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  25%      { background-position: 100% 50%; }
-  50%      { background-position: 50% 100%; }
-  75%      { background-position: 100% 0%; }
 }
 
 /* Custom scrollbar */
