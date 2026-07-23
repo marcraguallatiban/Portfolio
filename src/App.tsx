@@ -6,7 +6,6 @@ import WaveDivider from './components/ui/WaveDivider'
 import About from './components/sections/About'
 import Timeline from './components/sections/Timeline'
 import Certificates from './components/sections/Certificates'
-import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
 import Contact from './components/sections/Contact'
 import ScrollProgress from './components/ui/ScrollProgress'
@@ -27,7 +26,6 @@ export default function App() {
         <About />
         <Timeline />
         <Certificates />
-        <Skills />
         <Projects />
         <Contact />
       </main>
