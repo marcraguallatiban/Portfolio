@@ -7,11 +7,13 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-resume": "node scripts/generate-resume.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "framer-motion": "^12.42.2",
+    "pdfmake": "^0.3.11",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-icons": "^5.7.0"
