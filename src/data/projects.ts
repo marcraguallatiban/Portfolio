@@ -20,6 +20,8 @@ export interface ProjectData {
   description: string
   images: string[]
   technologies: string[]
+  liveUrl?: string
+  githubUrl?: string
 }
 
 export const projects: ProjectData[] = [
@@ -36,6 +38,8 @@ export const projects: ProjectData[] = [
     images: [project1Img],
     // ---------- CHANGE TECHNOLOGIES ----------
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    liveUrl: 'https://taguro-mobile.netlify.app',
+    githubUrl: 'https://github.com/marcku04/taguro-mobile',
   },
   {
     id: 'project-2',
@@ -44,6 +48,8 @@ export const projects: ProjectData[] = [
       'A Kanban-style task management application with drag-and-drop functionality, real-time collaboration, and progress tracking features.',
     images: [projectPlaceholder, projectPlaceholder],
     technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
+    liveUrl: 'https://devpath-demo.netlify.app',
+    githubUrl: 'https://github.com/marcku04/devpath',
   },
   {
     id: 'project-3',
@@ -52,6 +58,8 @@ export const projects: ProjectData[] = [
       'A responsive weather dashboard that displays current conditions, hourly and weekly forecasts using the OpenWeather API with dynamic visualizations.',
     images: [projectPlaceholder, projectPlaceholder, projectPlaceholder],
     technologies: ['React', 'Chart.js', 'OpenWeather API', 'CSS'],
+    liveUrl: 'https://dans-carwash.netlify.app',
+    githubUrl: 'https://github.com/marcku04/dans-carwash',
   },
   {
     id: 'project-4',
@@ -60,5 +68,7 @@ export const projects: ProjectData[] = [
       'A modern, responsive personal portfolio built with React, TypeScript, and Tailwind CSS. Features dark mode, animations, and a contact form.',
     images: [projectPlaceholder],
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    liveUrl: 'https://marcku04.netlify.app',
+    githubUrl: 'https://github.com/marcku04/maes-portfolio',
   },
 ]

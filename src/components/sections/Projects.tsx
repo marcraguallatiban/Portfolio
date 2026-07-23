@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronLeft, FaChevronRight, FaTimes, FaStar, FaImages } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaTimes, FaStar, FaImages, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa6";
 import SectionTitle from "../ui/SectionTitle";
 import Card from "../ui/Card";
 import { projects } from "../../data/projects";
@@ -122,6 +123,35 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {(project.liveUrl || project.githubUrl) && (
+                    <div className="mt-4 flex gap-2 pt-3 border-t border-white/[0.06]">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex-1 text-center text-xs font-medium rounded-full bg-accent/10 text-accent py-2 hover:bg-accent hover:text-white transition-all duration-300"
+                        >
+                          <FaExternalLinkAlt className="inline mr-1.5" size={10} />
+                          Live Demo
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex-1 text-center text-xs font-medium rounded-full bg-white/5 text-white/60 py-2 hover:bg-white/10 hover:text-white transition-all duration-300"
+                        >
+                          <FaGithub className="inline mr-1.5" size={10} />
+                          Source
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </Card>
             </motion.div>

@@ -77,15 +77,17 @@ export default function Button({
   }
 
   if (href) {
-    const isExternal = href.startsWith('http')
-    const isFile = /\.\w+$/.test(href) && !isExternal
     return (
       <a
         href={href}
-        target={isExternal ? '_blank' : undefined}
-        rel={isExternal ? 'noopener noreferrer' : undefined}
-        download={isFile ? href : undefined}
-        {...commonProps}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+        aria-label={ariaLabel}
+        onClick={(e) => {
+          handleRipple(e)
+          onClick?.()
+        }}
       >
         {icon && <span className="text-lg">{icon}</span>}
         {children}

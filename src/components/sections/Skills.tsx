@@ -68,6 +68,9 @@ export default function Skills() {
                             {getIcon(skill.icon, categoryIconColors[group.category] || '#7288AE')}
                           </span>
                           <span className="text-sm font-medium text-[#EAE0CF]/80">{skill.name}</span>
+                          <span className="ml-auto text-[10px] font-medium text-accent opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300">
+                            {skill.proficiency}%
+                          </span>
                         </div>
                         {/* Progress bar */}
                         <div className="h-1.5 w-full rounded-full bg-white/5 overflow-hidden">

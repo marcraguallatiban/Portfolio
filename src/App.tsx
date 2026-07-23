@@ -2,6 +2,7 @@ import Background from './components/ui/Background'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
+import WaveDivider from './components/ui/WaveDivider'
 import About from './components/sections/About'
 import Timeline from './components/sections/Timeline'
 import Certificates from './components/sections/Certificates'
@@ -22,6 +23,7 @@ export default function App() {
 
       <main>
         <Hero />
+        <WaveDivider />
         <About />
         <Timeline />
         <Certificates />

@@ -29,7 +29,7 @@ export const personalInfo = {
   phone: '+639383885449',
 
   // ---------- CHANGE YOUR RESUME LINK ----------
-  resumeUrl: '/resume.pdf',
+  resumeUrl: 'resume.pdf',
 }
 
 // =====================================

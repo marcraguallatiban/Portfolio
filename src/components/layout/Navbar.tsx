@@ -56,9 +56,9 @@ export default function Navbar() {
             <li key={link.id}>
               <button
                 onClick={() => handleClick(link.id)}
-                className={`relative px-3 py-1.5 text-sm font-medium rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+                className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
                   activeSection === link.id
-                    ? 'text-white bg-white/10'
+                    ? 'text-white'
                     : 'text-white/60 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -66,7 +66,7 @@ export default function Navbar() {
                 {activeSection === link.id && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute inset-0 rounded-lg bg-white/10 -z-10"
+                    className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-gradient-to-r from-[#4B5694] to-[#7288AE]"
                   />
                 )}
               </button>

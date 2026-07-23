@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaDownload, FaChevronDown } from "react-icons/fa";
 import Button from "../ui/Button";
@@ -24,6 +24,19 @@ const particles: Particle[] = Array.from({ length: 4 }, (_, i) => ({
 }));
 
 export default function Hero() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouse = (e: MouseEvent) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth - 0.5) * 2,
+        y: (e.clientY / window.innerHeight - 0.5) * 2,
+      });
+    };
+    window.addEventListener("mousemove", handleMouse, { passive: true });
+    return () => window.removeEventListener("mousemove", handleMouse);
+  }, []);
+
   const handleScrollTo = useCallback((id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }, []);
@@ -61,6 +74,8 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <motion.div
           animate={{
+            x: mousePos.x * -12,
+            y: mousePos.y * -12,
             opacity: [0.08, 0.15, 0.08],
             scale: [1, 1.05, 1],
           }}
@@ -123,7 +138,6 @@ export default function Hero() {
               "Front-End Developer of Taguro Mobile App",
               "UI/UX Designer",
               "Web Designer",
-              "Abegai Cantago",
             ]}
             speed={80}
             deleteSpeed={50}
