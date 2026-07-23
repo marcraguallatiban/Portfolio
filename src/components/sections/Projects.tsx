@@ -1,6 +1,13 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronLeft, FaChevronRight, FaTimes, FaStar, FaImages, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaTimes,
+  FaStar,
+  FaImages,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import SectionTitle from "../ui/SectionTitle";
 import Card from "../ui/Card";
@@ -33,7 +40,8 @@ export default function Projects() {
       const project = projects[prev.projectIdx];
       return {
         ...prev,
-        imageIdx: (prev.imageIdx - 1 + project.images.length) % project.images.length,
+        imageIdx:
+          (prev.imageIdx - 1 + project.images.length) % project.images.length,
       };
     });
   }, []);
@@ -98,8 +106,7 @@ export default function Projects() {
 
                   {project.images.length > 1 && (
                     <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-black/60 backdrop-blur-sm px-2.5 py-1 text-xs text-white/90">
-                      <FaImages size={10} />
-                      +{project.images.length - 1}
+                      <FaImages size={10} />+{project.images.length - 1}
                     </div>
                   )}
                 </div>
@@ -134,7 +141,10 @@ export default function Projects() {
                           onClick={(e) => e.stopPropagation()}
                           className="flex-1 text-center text-xs font-medium rounded-full bg-accent/10 text-accent py-2 hover:bg-accent hover:text-white transition-all duration-300"
                         >
-                          <FaExternalLinkAlt className="inline mr-1.5" size={10} />
+                          <FaExternalLinkAlt
+                            className="inline mr-1.5"
+                            size={10}
+                          />
                           Live Demo
                         </a>
                       )}
@@ -219,7 +229,8 @@ export default function Projects() {
                 <span>{projects[lightbox.projectIdx].title}</span>
                 {projects[lightbox.projectIdx].images.length > 1 && (
                   <span>
-                    {lightbox.imageIdx + 1} / {projects[lightbox.projectIdx].images.length}
+                    {lightbox.imageIdx + 1} /{" "}
+                    {projects[lightbox.projectIdx].images.length}
                   </span>
                 )}
               </div>

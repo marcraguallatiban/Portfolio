@@ -14,14 +14,14 @@ export interface TimelineEvent {
 
 export const timelineEvents: TimelineEvent[] = [
   {
-    year: '2025',
+    year: '2024',
     title: 'Started Frontend Development',
-    subtitle: 'Self-taught journey',
+    subtitle: 'Self-taught and From Friends',
     description:
       'Began learning React, TypeScript, and modern CSS. Built first projects and fell in love with frontend engineering.',
   },
   {
-    year: '2025',
+    year: '2026',
     title: 'Taguro Mobile App',
     subtitle: 'Front-End Developer',
     description:
