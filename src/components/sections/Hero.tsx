@@ -138,7 +138,6 @@ export default function Hero() {
               "Front-End Developer of Taguro Mobile App",
               "UI/UX Designer",
               "Web Designer",
-              // "Hi, Abegail Cantago my bebelove",
             ]}
             speed={80}
             deleteSpeed={50}

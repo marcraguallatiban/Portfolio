@@ -77,11 +77,14 @@ export default function Button({
   }
 
   if (href) {
+    const isLocalFile = /\.\w+$/.test(href) && !href.startsWith('http')
+    const isDownloadable = isLocalFile && !/\.pdf$/i.test(href)
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isDownloadable ? undefined : '_blank'}
+        rel={isDownloadable ? undefined : 'noopener noreferrer'}
+        download={isDownloadable ? href.split('/').pop() || 'download' : undefined}
         className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
         aria-label={ariaLabel}
         onClick={(e) => {
