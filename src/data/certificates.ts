@@ -12,8 +12,8 @@ export interface Certificate {
 export const certificates: Certificate[] = [
   {
     title: 'Database',
-    issuer: 'Meta (Coursera)',
-    date: 'May 2025',
+    issuer: 'Certiport',
+    date: 'March 15, 2023',
     description:
       'Comprehensive database design and management covering relational databases, SQL queries, normalization, and indexing strategies.',
     skills: ['SQL', 'Database Design', 'Normalization', 'Indexing'],
