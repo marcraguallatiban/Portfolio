@@ -13,6 +13,12 @@
 
 import projectPlaceholder from '../assets/images/project-placeholder.svg'
 import project1Img from '../assets/images/project1-1.jpg'
+import devpathLoginImg from '../assets/images/devpath-login.png'
+import homepageImg from '../assets/images/homepage.png'
+import progressImg from '../assets/images/progress.png'
+import resourcesImg from '../assets/images/resources.png'
+import resultImg from '../assets/images/result.png'
+import careerImg from '../assets/images/career.png'
 
 export interface ProjectData {
   id: string
@@ -46,7 +52,7 @@ export const projects: ProjectData[] = [
     title: 'DevPath',
     description:
       'A Kanban-style task management application with drag-and-drop functionality, real-time collaboration, and progress tracking features.',
-    images: [projectPlaceholder, projectPlaceholder],
+    images: [devpathLoginImg, homepageImg, progressImg, resourcesImg, resultImg, careerImg],
     technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
     liveUrl: 'https://devpath-demo.netlify.app',
     githubUrl: 'https://github.com/marcku04/devpath',
