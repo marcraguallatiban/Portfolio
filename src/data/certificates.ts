@@ -12,8 +12,8 @@ export interface Certificate {
 export const certificates: Certificate[] = [
   {
     title: 'Database',
-    issuer: 'Meta (Coursera)',
-    date: 'May 2025',
+    issuer: 'Certiport - Information Technology Specialist (Database)',
+    date: 'March 15, 2023',
     description:
       'Comprehensive database design and management covering relational databases, SQL queries, normalization, and indexing strategies.',
     skills: ['SQL', 'Database Design', 'Normalization', 'Indexing'],
@@ -23,8 +23,8 @@ export const certificates: Certificate[] = [
   },
   {
     title: 'HTML and CSS',
-    issuer: 'freeCodeCamp',
-    date: 'April 2025',
+    issuer: 'Certiport - Information Technology Specialist (HTML and CSS)',
+    date: 'May 19, 2023',
     description:
       'Mastered responsive design principles, CSS Grid, Flexbox, and mobile-first development workflows.',
     skills: ['HTML5', 'CSS3', 'Flexbox', 'CSS Grid', 'Media Queries'],
@@ -34,8 +34,8 @@ export const certificates: Certificate[] = [
   },
   {
     title: 'Networking',
-    issuer: 'Cisco Networking Academy',
-    date: 'September 2025',
+    issuer: 'Certiport - Information Technology Specialist (Networking)',
+    date: 'December 2023',
     description:
       'Fundamentals of computer networking, TCP/IP, OSI model, routing, switching, and network security concepts.',
     skills: ['TCP/IP', 'OSI Model', 'Routing', 'Network Security'],
@@ -46,8 +46,8 @@ export const certificates: Certificate[] = [
  
   {
     title: 'JS Workshop',
-    issuer: 'Workshop Certificate',
-    date: 'June 2025',
+    issuer: 'JavaScript Learning Lab',
+    date: 'February 14, 2026',
     description:
       'Hands-on JavaScript workshop covering core concepts, ES6+, and practical problem-solving.',
     skills: ['JavaScript', 'ES6+', 'Problem Solving'],
@@ -56,9 +56,9 @@ export const certificates: Certificate[] = [
     image: 'JS-Workshop.png',
   },
   {
-    title: 'GitHub',
+    title: 'GitHub Workshop',
     issuer: 'GitHub Learning Lab',
-    date: 'January 2025',
+    date: 'February 14, 2026',
     description:
       'Version control workflows, branching strategies, pull requests, and open-source collaboration with Git and GitHub.',
     skills: ['Git', 'GitHub', 'Version Control', 'CI/CD'],

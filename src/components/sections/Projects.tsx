@@ -6,6 +6,7 @@ import {
   FaTimes,
   FaStar,
   FaImages,
+  FaAndroid,
 } from "react-icons/fa";
 import SectionTitle from "../ui/SectionTitle";
 import Card from "../ui/Card";
@@ -128,6 +129,21 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {project.playStoreUrl && (
+                    <div className="mt-4 flex gap-2 pt-3 border-t border-white/[0.06]">
+                      <a
+                        href={project.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex-1 text-center text-xs font-medium rounded-full bg-green-500/10 text-green-400 py-2 hover:bg-green-500 hover:text-white transition-all duration-300"
+                      >
+                        <FaAndroid className="inline mr-1.5" size={10} />
+                        Play Store
+                      </a>
+                    </div>
+                  )}
                 </div>
               </Card>
             </motion.div>

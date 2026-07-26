@@ -12,13 +12,18 @@
 // =====================================
 
 import projectPlaceholder from '../assets/images/project-placeholder.svg'
-import project1Img from '../assets/images/project1-1.jpg'
 import devpathLoginImg from '../assets/images/devpath-login.png'
 import homepageImg from '../assets/images/homepage.png'
 import progressImg from '../assets/images/progress.png'
 import resourcesImg from '../assets/images/resources.png'
 import resultImg from '../assets/images/result.png'
 import careerImg from '../assets/images/career.png'
+import loginImg from '../assets/images/login.jpg'
+import dashboardImg from '../assets/images/dashboard-taguro.jpg'
+import spacesImg from '../assets/images/spaces.jpg'
+import statusOverviewImg from '../assets/images/Status-Overview.jpg'
+import channelImg from '../assets/images/channel.jpg'
+import project1Img from '../assets/images/project1-1.jpg'
 
 export interface ProjectData {
   id: string
@@ -28,6 +33,7 @@ export interface ProjectData {
   technologies: string[]
   liveUrl?: string
   githubUrl?: string
+  playStoreUrl?: string
 }
 
 export const projects: ProjectData[] = [
@@ -41,11 +47,12 @@ export const projects: ProjectData[] = [
     // ---------- CHANGE PROJECT IMAGES ----------
     // Replace with your own imports at the top of this file,
     // then use the variable names below.
-    images: [project1Img],
+    images: [loginImg, dashboardImg, spacesImg, statusOverviewImg, channelImg],
     // ---------- CHANGE TECHNOLOGIES ----------
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     liveUrl: 'https://taguro-mobile.netlify.app',
     githubUrl: 'https://github.com/marcku04/taguro-mobile',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.support.taguro&pcampaignid=web_share',
   },
   {
     id: 'project-2',
@@ -62,19 +69,9 @@ export const projects: ProjectData[] = [
     title: 'Dans Carwash',
     description:
       'A responsive weather dashboard that displays current conditions, hourly and weekly forecasts using the OpenWeather API with dynamic visualizations.',
-    images: [projectPlaceholder, projectPlaceholder, projectPlaceholder],
+    images: [project1Img, projectPlaceholder, projectPlaceholder],
     technologies: ['React', 'Chart.js', 'OpenWeather API', 'CSS'],
     liveUrl: 'https://dans-carwash.netlify.app',
     githubUrl: 'https://github.com/marcku04/dans-carwash',
-  },
-  {
-    id: 'project-4',
-    title: 'Maes ',
-    description:
-      'A modern, responsive personal portfolio built with React, TypeScript, and Tailwind CSS. Features dark mode, animations, and a contact form.',
-    images: [projectPlaceholder],
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    liveUrl: 'https://marcku04.netlify.app',
-    githubUrl: 'https://github.com/marcku04/maes-portfolio',
   },
 ]
