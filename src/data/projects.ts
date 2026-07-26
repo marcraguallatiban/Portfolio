@@ -23,6 +23,7 @@ import dashboardImg from '../assets/images/dashboard-taguro.jpg'
 import spacesImg from '../assets/images/spaces.jpg'
 import statusOverviewImg from '../assets/images/Status-Overview.jpg'
 import channelImg from '../assets/images/channel.jpg'
+import dansCarwash1 from '../assets/images/project1-1.jpg'
 
 
 export interface ProjectData {
@@ -69,7 +70,7 @@ export const projects: ProjectData[] = [
     title: 'Dans Carwash',
     description:
       'A responsive weather dashboard that displays current conditions, hourly and weekly forecasts using the OpenWeather API with dynamic visualizations.',
-    images: [project1Img, projectPlaceholder, projectPlaceholder],
+    images: [dansCarwash1, projectPlaceholder],
     technologies: ['React', 'Chart.js', 'OpenWeather API', 'CSS'],
     liveUrl: 'https://dans-carwash.netlify.app',
     githubUrl: 'https://github.com/marcku04/dans-carwash',
