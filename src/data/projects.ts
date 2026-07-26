@@ -23,7 +23,7 @@ import dashboardImg from '../assets/images/dashboard-taguro.jpg'
 import spacesImg from '../assets/images/spaces.jpg'
 import statusOverviewImg from '../assets/images/Status-Overview.jpg'
 import channelImg from '../assets/images/channel.jpg'
-import project1Img from '../assets/images/project1-1.jpg'
+
 
 export interface ProjectData {
   id: string
