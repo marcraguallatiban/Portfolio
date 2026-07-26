@@ -82,7 +82,8 @@ export default function Projects() {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="group"
+              className="group cursor-pointer"
+              onClick={() => setLightbox({ projectIdx: idx, imageIdx: 0 })}
             >
               <Card className="overflow-hidden h-full flex flex-col relative">
                 {idx === 0 && (
@@ -92,10 +93,7 @@ export default function Projects() {
                   </div>
                 )}
 
-                <div
-                  className="relative overflow-hidden cursor-pointer"
-                  onClick={() => setLightbox({ projectIdx: idx, imageIdx: 0 })}
-                >
+                <div className="relative overflow-hidden">
                   <img
                     src={project.images[0]}
                     alt={`Screenshot of ${project.title}`}
@@ -119,7 +117,7 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  {/* <div className="mt-4 flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
@@ -128,7 +126,7 @@ export default function Projects() {
                         {tech}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
 
                   {project.playStoreUrl && (
                     <div className="mt-4 flex gap-2 pt-3 border-t border-white/[0.06]">

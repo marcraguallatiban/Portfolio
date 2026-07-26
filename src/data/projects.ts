@@ -31,7 +31,7 @@ export interface ProjectData {
   title: string
   description: string
   images: string[]
-  technologies: string[]
+  technologies?: string[]
   liveUrl?: string
   githubUrl?: string
   playStoreUrl?: string
@@ -44,13 +44,13 @@ export const projects: ProjectData[] = [
     title: 'Taguro Mobile',
     // ---------- CHANGE PROJECT DESCRIPTION ----------
     description:
-      'A full-featured e-commerce web application built with React and Node.js. Includes product browsing, cart management, user authentication, and payment integration.',
+      'A task management mobile app we developed featuring kanban and scrum boards, along with a QR code scanner for inviting collaborators, where I worked as the UI/UX of the app focusing on creating an intuitive and user-friendly experience.',
     // ---------- CHANGE PROJECT IMAGES ----------
     // Replace with your own imports at the top of this file,
     // then use the variable names below.
     images: [loginImg, dashboardImg, spacesImg, statusOverviewImg, channelImg],
-    // ---------- CHANGE TECHNOLOGIES ----------
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    // // ---------- CHANGE TECHNOLOGIES ----------
+    // technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     liveUrl: 'https://taguro-mobile.netlify.app',
     githubUrl: 'https://github.com/marcku04/taguro-mobile',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.support.taguro&pcampaignid=web_share',
@@ -59,9 +59,9 @@ export const projects: ProjectData[] = [
     id: 'project-2',
     title: 'DevPath',
     description:
-      'A Kanban-style task management application with drag-and-drop functionality, real-time collaboration, and progress tracking features.',
+      'DevPath; Machine Learning; Student Assessment; Career Recommendation; Educational Technology.',
     images: [devpathLoginImg, homepageImg, progressImg, resourcesImg, resultImg, careerImg],
-    technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
+    // technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
     liveUrl: 'https://devpath-demo.netlify.app',
     githubUrl: 'https://github.com/marcku04/devpath',
   },
@@ -69,9 +69,9 @@ export const projects: ProjectData[] = [
     id: 'project-3',
     title: 'Dans Carwash',
     description:
-      'A responsive weather dashboard that displays current conditions, hourly and weekly forecasts using the OpenWeather API with dynamic visualizations.',
-    images: [dansCarwash1, projectPlaceholder],
-    technologies: ['React', 'Chart.js', 'OpenWeather API', 'CSS'],
+      'A Windows Forms-based car wash management system designed to streamline daily operations, featuring a clean, user-friendly interface with a car wash-themed design for an intuitive user experience.',
+    images: [dansCarwash1],
+    // technologies: ['React', 'Chart.js', 'OpenWeather API', 'CSS'],
     liveUrl: 'https://dans-carwash.netlify.app',
     githubUrl: 'https://github.com/marcku04/dans-carwash',
   },
