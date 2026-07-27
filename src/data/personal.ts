@@ -45,11 +45,11 @@ export const socialLinks = [
     url: 'https://github.com/marcraguallatiban',
     icon: 'FaGithub',
   },
-  {
-    name: 'LinkedIn',
-    url: 'https://linkedin.com/in/marclatiban',
-    icon: 'FaLinkedin',
-  },
+  // {
+  //   name: 'LinkedIn',
+  //   url: 'https://linkedin.com/in/marclatiban',
+  //   icon: 'FaLinkedin',
+  // },
   {
     name: 'Facebook',
     url: 'https://www.facebook.com/share/18yTmYVciK/',
