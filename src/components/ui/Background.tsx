@@ -1,15 +1,10 @@
 import { motion } from 'framer-motion'
 
-interface Bubble {
-  size: number
-  x: string
-  y: string
-  color: string
-  duration: number
-  delay: number
-}
+const isTouch = typeof window !== 'undefined'
+  ? window.matchMedia('(hover: none)').matches
+  : false
 
-const bubbles: Bubble[] = [
+const bubbles = [
   { size: 18, x: '15%', y: '25%', color: '#4B5694', duration: 20, delay: 0 },
   { size: 14, x: '75%', y: '65%', color: '#7288AE', duration: 22, delay: 2 },
   { size: 12, x: '50%', y: '85%', color: '#4F252E', duration: 18, delay: 1 },
@@ -18,14 +13,12 @@ const bubbles: Bubble[] = [
 export default function Background() {
   return (
     <>
-      {/* Single radial glow — static */}
       <div
         aria-hidden="true"
         className="pointer-events-none fixed -top-40 -left-40 -z-10 h-[500px] w-[500px] rounded-full bg-secondary/8"
       />
 
-      {/* Floating bubbles */}
-      {bubbles.map((b, i) => (
+      {!isTouch && bubbles.map((b, i) => (
         <motion.div
           key={i}
           aria-hidden="true"
@@ -51,7 +44,6 @@ export default function Background() {
         />
       ))}
 
-      {/* Grid overlay */}
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 -z-10"

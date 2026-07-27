@@ -97,6 +97,7 @@ export default function Projects() {
                   <img
                     src={project.images[0]}
                     alt={`Screenshot of ${project.title}`}
+                    loading="lazy"
                     className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />

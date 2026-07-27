@@ -5,7 +5,7 @@ import SectionTitle from '../ui/SectionTitle'
 import { certificates, type Certificate } from '../../data/certificates'
 
 const imageModules = import.meta.glob<{ default: string }>(
-  '/src/assets/images/certificates/*.png',
+  '/src/assets/images/certificates/*.webp',
   { eager: true, query: '?url' }
 )
 

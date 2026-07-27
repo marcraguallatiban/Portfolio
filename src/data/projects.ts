@@ -11,7 +11,7 @@
 //   as you want.
 // =====================================
 
-import devpathLoginImg from '../assets/images/devpath-login.png'
+import devpathLoginImg from '../assets/images/devpath-login.webp'
 import homepageImg from '../assets/images/homepage.png'
 import progressImg from '../assets/images/progress.png'
 import resourcesImg from '../assets/images/resources.png'
@@ -22,7 +22,7 @@ import dashboardImg from '../assets/images/dashboard-taguro.jpg'
 import spacesImg from '../assets/images/spaces.jpg'
 import statusOverviewImg from '../assets/images/Status-Overview.jpg'
 import channelImg from '../assets/images/channel.jpg'
-import dansCarwash1 from '../assets/images/project1-1.jpg'
+import dansCarwash1 from '../assets/images/project1-1.webp'
 
 
 export interface ProjectData {

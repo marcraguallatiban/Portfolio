@@ -5,28 +5,15 @@ import Button from "../ui/Button";
 import TypingAnimation from "../ui/TypingAnimation";
 import { personalInfo } from "../../data/personal";
 
-interface Particle {
-  id: number;
-  x: string;
-  y: string;
-  size: number;
-  duration: number;
-  delay: number;
-}
-
-const particles: Particle[] = Array.from({ length: 4 }, (_, i) => ({
-  id: i,
-  x: `${15 + i * 25}%`,
-  y: `${20 + i * 20}%`,
-  size: 2 + Math.random() * 2,
-  duration: 10 + Math.random() * 8,
-  delay: Math.random() * 3,
-}));
+const isTouch = typeof window !== 'undefined'
+  ? window.matchMedia('(hover: none)').matches
+  : false
 
 export default function Hero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    if (isTouch) return;
     const handleMouse = (e: MouseEvent) => {
       setMousePos({
         x: (e.clientX / window.innerWidth - 0.5) * 2,
@@ -70,44 +57,21 @@ export default function Hero() {
         }}
       />
 
-      {/* Single subtle background blob (CSS animated, no blur) */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <motion.div
-          animate={{
-            x: mousePos.x * -12,
-            y: mousePos.y * -12,
-            opacity: [0.08, 0.15, 0.08],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 h-72 w-72 rounded-full bg-secondary/20"
-        />
-      </div>
-
-      {/* Floating particles */}
-      {particles.map((p) => (
-        <motion.div
-          key={p.id}
-          aria-hidden="true"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.15, 0.35, 0.15],
-          }}
-          transition={{
-            duration: p.duration,
-            delay: p.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="pointer-events-none fixed -z-5 rounded-full bg-accent/30"
-          style={{
-            width: p.size * 2,
-            height: p.size * 2,
-            left: p.x,
-            top: p.y,
-          }}
-        />
-      ))}
+      {/* Single subtle background blob (mouse-driven on desktop only) */}
+      {!isTouch && (
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <motion.div
+            animate={{
+              x: mousePos.x * -12,
+              y: mousePos.y * -12,
+              opacity: [0.08, 0.15, 0.08],
+              scale: [1, 1.05, 1],
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 left-1/4 h-72 w-72 rounded-full bg-secondary/20"
+          />
+        </div>
+      )}
 
       <motion.div
         initial="hidden"

@@ -20,7 +20,7 @@ import {
 import Button from "../ui/Button";
 import { personalInfo } from "../../data/personal";
 
-import profile from "../../assets/images/fb.jpg";
+import profile from "../../assets/images/fb.webp";
 
 function AnimatedCounter({
   value,
@@ -51,6 +51,10 @@ function AnimatedCounter({
     </span>
   );
 }
+
+const isTouch = typeof window !== 'undefined'
+  ? window.matchMedia('(hover: none)').matches
+  : false
 
 const statCards = [
   { icon: <FaCode size={20} />, value: 3, suffix: "+", label: "Technologies" },
@@ -95,9 +99,11 @@ export default function About() {
             className="flex justify-center"
           >
             <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
+              {...(!isTouch && {
+                animate: { y: [0, -12, 0] },
+                transition: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              })}
             >
               <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-[#4B5694]/40 via-transparent to-[#7288AE]/40 blur-sm" />
               <div className="absolute inset-0 rounded-2xl bg-[#4B5694]/30 blur-xl transform rotate-6" />
