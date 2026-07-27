@@ -52,7 +52,7 @@ export const socialLinks = [
   },
   {
     name: 'Facebook',
-    url: 'https://facebook.com/marclatiban',
+    url: 'https://www.facebook.com/share/18yTmYVciK/',
     icon: 'FaFacebook',
   },
   {
