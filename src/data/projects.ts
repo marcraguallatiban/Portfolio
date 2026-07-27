@@ -11,7 +11,6 @@
 //   as you want.
 // =====================================
 
-import projectPlaceholder from '../assets/images/project-placeholder.svg'
 import devpathLoginImg from '../assets/images/devpath-login.png'
 import homepageImg from '../assets/images/homepage.png'
 import progressImg from '../assets/images/progress.png'
