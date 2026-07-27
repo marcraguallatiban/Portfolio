@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaChevronLeft,
@@ -19,6 +19,8 @@ interface LightboxState {
 
 export default function Projects() {
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
+  const touchStartX = useRef(0);
+  const swiped = useRef(false);
 
   const close = useCallback(() => setLightbox(null), []);
 
@@ -168,6 +170,18 @@ export default function Projects() {
               transition={{ duration: 0.2 }}
               className="relative max-w-4xl w-full"
               onClick={(e) => e.stopPropagation()}
+              onTouchStart={(e) => {
+                touchStartX.current = e.touches[0].clientX;
+                swiped.current = false;
+              }}
+              onTouchEnd={(e) => {
+                const diff = touchStartX.current - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                  swiped.current = true;
+                  if (diff > 0) goNext();
+                  else goPrev();
+                }
+              }}
             >
               <button
                 onClick={close}
@@ -180,7 +194,11 @@ export default function Projects() {
               <img
                 src={projects[lightbox.projectIdx].images[lightbox.imageIdx]}
                 alt={`${projects[lightbox.projectIdx].title} screenshot ${lightbox.imageIdx + 1}`}
-                className="w-full rounded-lg max-h-[80vh] object-contain"
+                onClick={() => {
+                  if (!swiped.current) close();
+                  swiped.current = false;
+                }}
+                className="w-full rounded-lg max-h-[80vh] object-contain cursor-pointer"
               />
 
               {/* Prev */}
