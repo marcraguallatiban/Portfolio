@@ -19,7 +19,7 @@ export const certificates: Certificate[] = [
     skills: ['SQL', 'Database Design', 'Normalization', 'Indexing'],
     category: 'Database',
     credentialUrl: '#',
-    image: 'Database.png',
+    image: 'Database.webp',
   },
   {
     title: 'HTML and CSS',
@@ -30,7 +30,7 @@ export const certificates: Certificate[] = [
     skills: ['HTML5', 'CSS3', 'Flexbox', 'CSS Grid', 'Media Queries'],
     category: 'Frontend',
     credentialUrl: '#',
-    image: 'HTML and CSS.png',
+    image: 'HTML and CSS.webp',
   },
   {
     title: 'Networking',
@@ -41,7 +41,7 @@ export const certificates: Certificate[] = [
     skills: ['TCP/IP', 'OSI Model', 'Routing', 'Network Security'],
     category: 'Networking',
     credentialUrl: '#',
-    image: 'networkin.png',
+    image: 'networkin.webp',
   },
  
   {
@@ -53,7 +53,7 @@ export const certificates: Certificate[] = [
     skills: ['JavaScript', 'ES6+', 'Problem Solving'],
     category: 'Frontend',
     credentialUrl: '#',
-    image: 'JS-Workshop.png',
+    image: 'JS-Workshop.webp',
   },
   {
     title: 'GitHub Workshop',
@@ -64,7 +64,7 @@ export const certificates: Certificate[] = [
     skills: ['Git', 'GitHub', 'Version Control', 'CI/CD'],
     category: 'Backend',
     credentialUrl: '#',
-    image: 'GitHub.png',
+    image: 'GitHub.webp',
   },
   // {
   //   title: 'Gender Sensitivity',
